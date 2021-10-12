@@ -5,16 +5,13 @@ using TMPro;
 
 public class UIPresenter : MonoBehaviour
 {
-    
-    public TextMeshProUGUI testText;
-    public int testInt;
 
     private void OnGUI()
     {
         
     }
 
-    private void Start()
+    /*private void Start()
     {
         Events.SetScore(Events.RequestScore() + 1);
         
@@ -31,8 +28,6 @@ public class UIPresenter : MonoBehaviour
 
     private void OnSetScore(int amount)
     {
-        testText.text = amount.ToString();
-    }
-
-
+        //testText.text = amount.ToString();
+    }*/
 }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e6caa0aca2cd34e8b396d82c9fed83, type: 3}
+  m_Name: Heldur
+  m_EditorClassIdentifier: 
+  candidateName: "Heldur Harvan\xE4htav-J\xF5ud"
+  image: {fileID: -2413806693520163455, guid: aab6b77d97d9e114d80b52da93981850, type: 3}
+  pressCharisma: 8
+  lobbySkill: 6
+  familyRolemodel: 3
+  confidence: 9
+  leftRight: 8
+  convLib: 2
+  parliament: 3
+  electoral: 5
+  people: 9

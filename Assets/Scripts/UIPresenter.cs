@@ -16,7 +16,7 @@ public class UIPresenter : MonoBehaviour
     public TextMeshProUGUI reputation;
    
 
-    public void Awake()
+    public void Update()
     {
         CandidateName.text = CandidateData.candidateName;
         CandidadeImage.sprite = CandidateData.image;

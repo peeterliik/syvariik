@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public CandidateData heldur;
+
+    public void SetReputationGood()
     {
-        
+        heldur.SetReputationGood();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetReputationBad()
     {
-        
+        heldur.SetReputationBad();
+    }
+
+    public void SetReputationTrue()
+    {
+        heldur.SetReputationTrue();
     }
 }
+

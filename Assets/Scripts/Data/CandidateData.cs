@@ -55,7 +55,9 @@ public class CandidateData : ScriptableObject
         {
             parliament = Mathf.Clamp(parliament + 1, 1, 10);
         }
-        
+
+        TurnManager.Instance.turnLeft -= 0.33f;
+
     }
 
     public void SetReputationBad()
@@ -70,6 +72,8 @@ public class CandidateData : ScriptableObject
         {
             parliament = Mathf.Clamp(parliament - 1, 1, 10);
         }
+
+        TurnManager.Instance.turnLeft -= 0.33f;
     }
 
     public void SetReputationTrue()
@@ -77,6 +81,8 @@ public class CandidateData : ScriptableObject
         int pressSkill = Mathf.RoundToInt((pressCharisma + confidence) / 2) - 5;
         Debug.Log("Value of the modifier is: " + pressSkill);
         parliament = Mathf.Clamp(parliament + pressSkill, 1, 10);
+
+        TurnManager.Instance.turnLeft -= 0.33f;
 
     }
   

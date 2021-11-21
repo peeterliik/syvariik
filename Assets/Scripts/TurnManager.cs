@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -7,12 +8,19 @@ using TMPro;
 public class TurnManager : MonoBehaviour
 {
     public static TurnManager Instance;
+    
+    public GameObject electionsPanel;
+    public GameObject turnPanel;
+
+    public int activeStage = 1;
 
     public Image turnBar;
     public Button goodButton;
     public Button badButton;
     public Button trueButton;
     public int turnCounter;
+    public int weekCounter;
+    public TextMeshProUGUI week;
 
     private float _turnLeft = 1f;
     public float turnLeft
@@ -42,6 +50,9 @@ public class TurnManager : MonoBehaviour
 
     private void Update()
     {
+        week.text = "Week " + weekCounter;
+
+
       if (turnLeft < 0.1)
         {
             goodButton.interactable = false;
@@ -60,6 +71,30 @@ public class TurnManager : MonoBehaviour
         turnLeft = 1f;
         SetTurnBar();
         turnCounter += 1;
+        if (turnCounter == 3)
+        {                
+           weekCounter += 1;
+           turnCounter = 0;
+        }
+
+        if (weekCounter == 3)
+        {
+            electionsPanel.SetActive(true);
+            turnPanel.SetActive(false);
+            
+        }
+    }
+
+    public void NextStage()
+    {
+        electionsPanel.SetActive(false);
+        turnPanel.SetActive(true);
+        activeStage += 1;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     public void SetTurnBar()

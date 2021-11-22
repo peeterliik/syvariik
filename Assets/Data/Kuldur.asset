@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Kuldur
   m_EditorClassIdentifier: 
   candidateName: "Kuldar T\xE4pnek\xE4si-Kuldur"
-  image: {fileID: -2413806693520163455, guid: aab6b77d97d9e114d80b52da93981850, type: 3}
+  image: {fileID: 699703873648253923, guid: ee8d21d9b35ac3d42a6fa9f4d92e7f1f, type: 3}
   pressCharisma: 4
   lobbySkill: 3
   familyRolemodel: 6
   confidence: 2
   leftRight: 5
-  convLib: 2
+  consLib: 5
   parliament: 10
   electoral: 10
   people: 10

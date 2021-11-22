@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heldur
   m_EditorClassIdentifier: 
   candidateName: "Heldur Harvan\xE4htav-J\xF5ud"
-  image: {fileID: -2413806693520163455, guid: aab6b77d97d9e114d80b52da93981850, type: 3}
+  image: {fileID: 8232878538186372548, guid: ee8d21d9b35ac3d42a6fa9f4d92e7f1f, type: 3}
   pressCharisma: 8
   lobbySkill: 6
   familyRolemodel: 3

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Julmur
   m_EditorClassIdentifier: 
   candidateName: Juula Sadist-Julmur
-  image: {fileID: -2413806693520163455, guid: aab6b77d97d9e114d80b52da93981850, type: 3}
+  image: {fileID: 2434629766918126224, guid: ee8d21d9b35ac3d42a6fa9f4d92e7f1f, type: 3}
   pressCharisma: 1
   lobbySkill: 1
   familyRolemodel: 1
   confidence: 5
   leftRight: 3
-  convLib: 6
+  consLib: 5
   parliament: 6
   electoral: 2
   people: 6

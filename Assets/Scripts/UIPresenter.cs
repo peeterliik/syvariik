@@ -6,54 +6,77 @@ using TMPro;
 
 public class UIPresenter : MonoBehaviour
 {
-
-    public CandidateData CandidateData;
-
+    //public CandidateData[] candidateList;
+    private int currentCandidateIndex = 1;
+    public CandidateData candidate1;
+    public CandidateData candidate2;
+    CandidateData candidate;
     public TextMeshProUGUI CandidateName;
     public Image CandidadeImage;
     public TextMeshProUGUI stats;
     public TextMeshProUGUI politicalViews;
     public TextMeshProUGUI reputation;
-   
 
-    public void Update()
-    {
-        CandidateName.text = CandidateData.candidateName;
-        CandidadeImage.sprite = CandidateData.image;
-        stats.text = "Press Charisma: " + CandidateData.pressCharisma + "\n" +
-                     "Lobby Skill: " + CandidateData.lobbySkill + "\n" +
-                     "Family Rolemodel: " + CandidateData.familyRolemodel + "\n" +
-                     "Confidence: " + CandidateData.confidence + "\n";
-        politicalViews.text = "Left(0) - Right(10): " + CandidateData.leftRight + "\n" +
-                              "Conservative(0) - Liberal(0): " + CandidateData.consLib + "\n";
-        reputation.text = "Parliament: " + CandidateData.parliament + "\n" +
-                          "Electoral Collage: " + CandidateData.electoral + "\n" +
-                          "General Public: " + CandidateData.people;
-    }
-
-
-    private void OnGUI()
-    {
-        
-    }
-
-    /*private void Start()
-    {
-        Events.SetScore(Events.RequestScore() + 1);
-        
-    }
     private void Awake()
     {
-        Events.OnSetScore += OnSetScore;
+        currentCandidateIndex = 1;
     }
 
-    private void OnDestroy()
+    private void Start()
     {
-        Events.OnSetScore -= OnSetScore;
+        candidate = candidate1;
+        //candidate = candidateList[currentCandidateIndex];
+
+        //Debug.Log("Candidate: " + candidateList[currentCandidateIndex].name + " Candidates: " + candidateList.Length + "; Index: " + currentCandidateIndex);
+        //candidate = candidateList[currentCandidateIndex];
+        CandidateName.text = candidate.candidateName;
+        CandidadeImage.sprite = candidate.image;
+        stats.text = "Press Charisma: " + candidate.pressCharisma + "\n" +
+                     "Lobby Skill: " + candidate.lobbySkill + "\n" +
+                     "Family Rolemodel: " + candidate.familyRolemodel + "\n" +
+                     "Confidence: " + candidate.confidence + "\n";
+        politicalViews.text = "Left(0) - Right(10): " + candidate.leftRight + "\n" +
+                              "Conservative(0) - Liberal(0): " + candidate.consLib + "\n";
+        reputation.text = "Parliament: " + candidate.parliament + "\n" +
+                          "Electoral Collage: " + candidate.electoral + "\n" +
+                          "General Public: " + candidate.people;
     }
 
-    private void OnSetScore(int amount)
+    public void switchCandidate()
     {
-        //testText.text = amount.ToString();
-    }*/
+        if (currentCandidateIndex == 1)
+        {
+            currentCandidateIndex = 2;
+            candidate = candidate2;
+        }
+        else
+        {
+            currentCandidateIndex = 1;
+            candidate = candidate1;
+        }
+        //Debug.Log(currentCandidateIndex);
+        //Debug.Log("Candidate: " + candidateList[currentCandidateIndex].name + " Candidates: " + candidateList.Length + "; Index: " + currentCandidateIndex);
+        //Debug.Log("pre: " + currentCandidateIndex);
+        /*if (currentCandidateIndex >= candidateList.Length)
+        {
+            currentCandidateIndex = 0;
+        }
+        else if (currentCandidateIndex < 0)
+        {
+            currentCandidateIndex = candidateList.Length - 1;
+        }
+        Debug.Log(currentCandidateIndex + " " + candidateList.Count);*/
+
+        CandidateName.text = candidate.candidateName;
+        CandidadeImage.sprite = candidate.image;
+        stats.text = "Press Charisma: " + candidate.pressCharisma + "\n" +
+                     "Lobby Skill: " + candidate.lobbySkill + "\n" +
+                     "Family Rolemodel: " + candidate.familyRolemodel + "\n" +
+                     "Confidence: " + candidate.confidence + "\n";
+        politicalViews.text = "Left(0) - Right(10): " + candidate.leftRight + "\n" +
+                              "Conservative(0) - Liberal(0): " + candidate.consLib + "\n";
+        reputation.text = "Parliament: " + candidate.parliament + "\n" +
+                          "Electoral Collage: " + candidate.electoral + "\n" +
+                          "General Public: " + candidate.people;
+    }
 }

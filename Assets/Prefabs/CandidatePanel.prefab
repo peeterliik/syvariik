@@ -349,7 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e24fe1a7f0aa674b8f3d047c521d96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CandidateData: {fileID: 11400000, guid: 7b9fa06d650ca7c43ad3703de982a644, type: 2}
+  candidateListData: {fileID: 0}
+  candidate: {fileID: 0}
   CandidateName: {fileID: 7624214252757871019}
   CandidadeImage: {fileID: 7624214253440647036}
   stats: {fileID: 7624214251725224938}

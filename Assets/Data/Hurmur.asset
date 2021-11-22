@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Hurmur
   m_EditorClassIdentifier: 
   candidateName: Hurmur Rukkis
-  image: {fileID: -2413806693520163455, guid: aab6b77d97d9e114d80b52da93981850, type: 3}
+  image: {fileID: -7737748710114358818, guid: ee8d21d9b35ac3d42a6fa9f4d92e7f1f, type: 3}
   pressCharisma: 4
   lobbySkill: 5
   familyRolemodel: 2
   confidence: 4
   leftRight: 2
-  convLib: 1
+  consLib: 5
   parliament: 1
   electoral: 7
   people: 10

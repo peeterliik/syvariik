@@ -11,18 +11,21 @@ public class Elections : MonoBehaviour
     public Button triggerElections;
     public CandidateData winner;
     public string winnerName;
- 
+
+    public AudioSource electionSound;
 
     void Start()
     {
         introText.text = "Time to elect the president!";
         electionWinner.gameObject.SetActive(false);
+        electionSound = GetComponent<AudioSource>();
     }
 
     public void GetWinner()
     {
         //TO-DO calculate the winning candidate
         winnerName = winner.candidateName;
+        electionSound.Play();
     }
 
     public void PresentWinner()

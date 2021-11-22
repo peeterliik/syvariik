@@ -8,7 +8,8 @@ using TMPro;
 public class TurnManager : MonoBehaviour
 {
     public static TurnManager Instance;
-    
+
+    public AudioSource endTurn;
     public GameObject electionsPanel;
     public GameObject turnPanel;
 
@@ -40,6 +41,7 @@ public class TurnManager : MonoBehaviour
     {
         Instance = this;
         turnCounter = 0;
+        endTurn = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -68,6 +70,7 @@ public class TurnManager : MonoBehaviour
 
     public void EndTurn()
     {
+        endTurn.Play();
         turnLeft = 1f;
         SetTurnBar();
         turnCounter += 1;

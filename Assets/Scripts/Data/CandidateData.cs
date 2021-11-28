@@ -57,7 +57,6 @@ public class CandidateData : ScriptableObject
         }
 
         TurnManager.Instance.turnLeft -= 0.33f;
-
     }
 
     public void SetReputationBad()

@@ -6789,7 +6789,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c6d8585c6566905488f8af9d0f354d9f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.408
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8067,6 +8067,7 @@ GameObject:
   - component: {fileID: 1161065087}
   - component: {fileID: 1161065086}
   - component: {fileID: 1161065085}
+  - component: {fileID: 1161065084}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8074,6 +8075,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1161065084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161065083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1095a0f392c3c49bb431f08efa353e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1161065085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9118,7 +9131,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0.64705884}
     m_HighlightedColor: {r: 0.8915094, g: 0.98598343, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0.64705884}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -9137,7 +9150,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1241270459}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7624214252651251957, guid: dfa602bdca9b8714bb825a02903ccb12, type: 3}
+        m_TargetAssemblyTypeName: UIPresenter, Assembly-CSharp
+        m_MethodName: switchCandidate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!114 &1241270459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11028,7 +11053,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0.64705884}
     m_HighlightedColor: {r: 0.8915094, g: 0.98598343, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0.64705884}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -11051,7 +11076,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7624214252651251957, guid: dfa602bdca9b8714bb825a02903ccb12, type: 3}
         m_TargetAssemblyTypeName: UIPresenter, Assembly-CSharp
         m_MethodName: switchCandidate
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11059,7 +11084,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1622411314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13710,9 +13735,37 @@ PrefabInstance:
       value: CandidatePanel
       objectReference: {fileID: 0}
     - target: {fileID: 7624214252651251957, guid: dfa602bdca9b8714bb825a02903ccb12, type: 3}
-      propertyPath: candidateListData
+      propertyPath: candidate1
       value: 
-      objectReference: {fileID: 11400000, guid: 40d5a7ac25444264cb088c28f88f4c87, type: 2}
+      objectReference: {fileID: 11400000, guid: 7b9fa06d650ca7c43ad3703de982a644, type: 2}
+    - target: {fileID: 7624214252651251957, guid: dfa602bdca9b8714bb825a02903ccb12, type: 3}
+      propertyPath: candidate2
+      value: 
+      objectReference: {fileID: 11400000, guid: 41abf872c7dc70c4cbddb197788abad2, type: 2}
+    - target: {fileID: 7624214252651251957, guid: dfa602bdca9b8714bb825a02903ccb12, type: 3}
+      propertyPath: candidateList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624214252651251957, guid: dfa602bdca9b8714bb825a02903ccb12, type: 3}
+      propertyPath: candidateList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b9fa06d650ca7c43ad3703de982a644, type: 2}
+    - target: {fileID: 7624214252651251957, guid: dfa602bdca9b8714bb825a02903ccb12, type: 3}
+      propertyPath: candidateList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 41abf872c7dc70c4cbddb197788abad2, type: 2}
+    - target: {fileID: 7624214252651251957, guid: dfa602bdca9b8714bb825a02903ccb12, type: 3}
+      propertyPath: candidateList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: f68746f291ce04e4bbd282928773da6f, type: 2}
+    - target: {fileID: 7624214252651251957, guid: dfa602bdca9b8714bb825a02903ccb12, type: 3}
+      propertyPath: candidateList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c40172de5412a8349bba4eac5854cbc9, type: 2}
+    - target: {fileID: 7624214252651251957, guid: dfa602bdca9b8714bb825a02903ccb12, type: 3}
+      propertyPath: candidateList.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ae4445f6c7eba54e9ab072762a81d83, type: 2}
     - target: {fileID: 7624214252715423010, guid: dfa602bdca9b8714bb825a02903ccb12, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

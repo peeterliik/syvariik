@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164783165a80e3141ac03c7f31fc7083, type: 3}
   m_Name: Candidates
   m_EditorClassIdentifier: 
-  candidates: []
+  candidates:
+  - {fileID: 11400000, guid: 7b9fa06d650ca7c43ad3703de982a644, type: 2}
+  - {fileID: 11400000, guid: 41abf872c7dc70c4cbddb197788abad2, type: 2}
+  - {fileID: 11400000, guid: f68746f291ce04e4bbd282928773da6f, type: 2}
+  - {fileID: 11400000, guid: c40172de5412a8349bba4eac5854cbc9, type: 2}
+  - {fileID: 11400000, guid: 2ae4445f6c7eba54e9ab072762a81d83, type: 2}

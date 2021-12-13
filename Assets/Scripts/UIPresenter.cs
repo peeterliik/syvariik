@@ -10,7 +10,7 @@ public class UIPresenter : MonoBehaviour
 {
     public static UIPresenter instance{get; private set;}
 
-//CandidateData currentCandidate;
+    //CandidateData currentCandidate;
     // Main panel fields
     public TextMeshProUGUI CandidateName;
     public Image CandidadeImage;
@@ -18,7 +18,8 @@ public class UIPresenter : MonoBehaviour
     public TextMeshProUGUI politicalViews;
     public TextMeshProUGUI reputation;
     // Press panel fields
-
+    public TextMeshProUGUI pressCandidateName;
+    public TextMeshProUGUI pressReputation;
 
     private void Awake()
     {
@@ -55,9 +56,9 @@ public class UIPresenter : MonoBehaviour
 
     public void refreshPress(Candidate candidate)
     {
-        CandidateName.text = candidate.candidateName;
+        pressCandidateName.text = candidate.candidateName;
 
-        reputation.text = "Parliament: " + candidate.parliament + "\n" +
+        pressReputation.text = "Parliament: " + candidate.parliament + "\n" +
                           "Electoral Collage: " + candidate.electoral + "\n" +
                           "General Public: " + candidate.people;
     }

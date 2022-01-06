@@ -62,4 +62,5 @@ public class UIPresenter : MonoBehaviour
                           "Electoral Collage: " + candidate.electoral + "\n" +
                           "General Public: " + candidate.people;
     }
+
 }

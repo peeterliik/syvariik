@@ -34,6 +34,8 @@ public class Candidate : MonoBehaviour
     [Range(1, 10)]
     public int people;
 
+    int modifier;
+
     // Factory method as constructors aren't applicable for MonoBehaviours.
     public void Init(CandidateData data) 
     {
@@ -49,6 +51,47 @@ public class Candidate : MonoBehaviour
         parliament = data.parliament;
         electoral = data.electoral;
         people = data.people;
+    }
+
+    public void SetReputationGood()
+    {
+        modifier = Random.Range(1, 10);
+        Debug.Log("Value of the modifier is: " + modifier);
+        if (modifier == 1)
+        {
+            parliament = Mathf.Clamp(parliament - 2, 1, 10);
+        }
+        else
+        {
+            parliament = Mathf.Clamp(parliament + 1, 1, 10);
+        }
+
+        TurnManager.Instance.turnLeft -= 0.33f;
+    }
+
+    public void SetReputationBad()
+    {
+        modifier = Random.Range(1, 10);
+        Debug.Log("Value of the modifier is: " + modifier);
+        if (modifier == 1)
+        {
+            parliament = Mathf.Clamp(parliament + 2, 1, 10);
+        }
+        else
+        {
+            parliament = Mathf.Clamp(parliament - 1, 1, 10);
+        }
+
+        TurnManager.Instance.turnLeft -= 0.33f;
+    }
+
+    public void SetReputationTrue()
+    {
+        int pressSkill = Mathf.RoundToInt((pressCharisma + confidence) / 2) - 5;
+        Debug.Log("Value of the modifier is: " + pressSkill);
+        parliament = Mathf.Clamp(parliament + pressSkill, 1, 10);
+
+        TurnManager.Instance.turnLeft -= 0.33f;
     }
 
 }

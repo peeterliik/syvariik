@@ -4504,8 +4504,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 710, y: -406.6383}
-  m_SizeDelta: {x: 1380, y: 251.0922}
+  m_AnchoredPosition: {x: 710, y: -406.58502}
+  m_SizeDelta: {x: 1380, y: 251.05667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &548702415
 MonoBehaviour:
@@ -5245,7 +5245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 963, y: -108.96109}
+  m_AnchoredPosition: {x: 963, y: -108.94333}
   m_SizeDelta: {x: 248, y: 100.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650504727
@@ -7932,7 +7932,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1236, y: -108.96109}
+  m_AnchoredPosition: {x: 1236, y: -108.94333}
   m_SizeDelta: {x: 248, y: 100.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1140146185
@@ -9234,8 +9234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 710, y: -651.1455}
-  m_SizeDelta: {x: 1380, y: 217.92218}
+  m_AnchoredPosition: {x: 710, y: -651.05664}
+  m_SizeDelta: {x: 1380, y: 217.88666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1264592863
 MonoBehaviour:
@@ -9759,7 +9759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 417, y: -108.96109}
+  m_AnchoredPosition: {x: 417, y: -108.94333}
   m_SizeDelta: {x: 248, y: 100.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1355850836
@@ -10059,7 +10059,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1398797085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12031,8 +12031,10 @@ MonoBehaviour:
   introText: {fileID: 233656964}
   electionWinner: {fileID: 244383127}
   triggerElections: {fileID: 120288777}
-  winner: {fileID: 11400000, guid: 7b9fa06d650ca7c43ad3703de982a644, type: 2}
+  candidates: {fileID: 11400000, guid: f079c20af5fed294b92d8b8d22302933, type: 2}
   winnerName: 
+  loserName: 
+  stage: 1
   electionSound: {fileID: 0}
 --- !u!82 &1806728514
 AudioSource:
@@ -12671,8 +12673,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 710, y: -145.5461}
-  m_SizeDelta: {x: 1380, y: 251.0922}
+  m_AnchoredPosition: {x: 710, y: -145.52834}
+  m_SizeDelta: {x: 1380, y: 251.05667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1923603458
 MonoBehaviour:
@@ -13220,7 +13222,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144, y: -108.96109}
+  m_AnchoredPosition: {x: 144, y: -108.94333}
   m_SizeDelta: {x: 248, y: 100.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118231360
@@ -13499,7 +13501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 690, y: -108.96109}
+  m_AnchoredPosition: {x: 690, y: -108.94333}
   m_SizeDelta: {x: 248, y: 100.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140270046

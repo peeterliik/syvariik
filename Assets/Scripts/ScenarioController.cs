@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ScenarioController : MonoBehaviour
 {
+    public static ScenarioController Instance;
+
     [SerializeField]
     CandidateList startingCandidates; //Only needed for initialization 
 
@@ -12,6 +14,18 @@ public class ScenarioController : MonoBehaviour
     int currentIndex;
 
     UIPresenter UIInstance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
@@ -57,5 +71,10 @@ public class ScenarioController : MonoBehaviour
         currentCandidate = candidates[currentIndex];
         currentCandidate.SetReputationTrue();
         UIInstance.refreshCandidate(currentCandidate);
+    }
+
+    public List<Candidate> GetCandidates()
+    {
+        return this.candidates;
     }
 }

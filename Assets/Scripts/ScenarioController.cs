@@ -38,9 +38,17 @@ public class ScenarioController : MonoBehaviour
             candidates.Add(Instantiate(candidate));
             Destroy(temp);
         }
+        Debug.Log(GetCandidates());
         currentCandidate = candidates[0];
         UIInstance.refreshCandidate(currentCandidate);
     }
+
+
+    public List<Candidate> GetCandidates()
+    {
+        return candidates;
+    }
+
 
     public void switchCandiate(int direction)
     { 

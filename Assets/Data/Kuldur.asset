@@ -20,6 +20,6 @@ MonoBehaviour:
   confidence: 2
   leftRight: 5
   consLib: 5
-  parliament: 10
-  electoral: 10
-  people: 10
+  parliament: 7
+  electoral: 8
+  people: 7

@@ -9,7 +9,6 @@ public class Elections : MonoBehaviour
     public TextMeshProUGUI introText;
     public TextMeshProUGUI electionWinner;
     public Button triggerElections;
-    public CandidateList candidates;
     
     public string winnerName;
     public string loserName;
@@ -28,6 +27,7 @@ public class Elections : MonoBehaviour
     public void GetWinner()
     {
         //TO-DO calculate the winning candidate
+        List<Candidate> candidates = ScenarioController.Instance.GetCandidates();
         int maxRep = 0;
         int minRep = 10;
         string stageName = "parliament";
@@ -35,7 +35,7 @@ public class Elections : MonoBehaviour
         switch (stage)
         {
             case 1:
-                foreach (CandidateData candidate in candidates.candidates)
+                foreach (Candidate candidate in candidates)
                 {
                     int value = candidate.parliament;
                     if (value > maxRep)
@@ -52,7 +52,7 @@ public class Elections : MonoBehaviour
                 }
                 break;
             case 2:
-                foreach (CandidateData candidate in candidates.candidates)
+                foreach (Candidate candidate in candidates)
                 {
                     int value = candidate.electoral;
                     if (value > maxRep)
@@ -69,7 +69,7 @@ public class Elections : MonoBehaviour
                 }
                 break;
             case 3:
-                foreach (CandidateData candidate in candidates.candidates)
+                foreach (Candidate candidate in candidates)
                 {
                     int value = candidate.people;
                     if (value > maxRep)
@@ -99,11 +99,5 @@ public class Elections : MonoBehaviour
         triggerElections.gameObject.SetActive(false);
         stage += 1;
 
-    }
-
-    
-    void Update()
-    {
-        
     }
 }

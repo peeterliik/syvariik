@@ -80,9 +80,4 @@ public class ScenarioController : MonoBehaviour
         currentCandidate.SetReputationTrue();
         UIInstance.refreshCandidate(currentCandidate);
     }
-
-    public List<Candidate> GetCandidates()
-    {
-        return this.candidates;
-    }
 }

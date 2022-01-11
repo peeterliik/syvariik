@@ -45,12 +45,6 @@ public class TurnManager : MonoBehaviour
         endTurn = GetComponent<AudioSource>();
     }
 
-    private void Start()
-    {
-        
-    }
-
-
     private void Update()
     {
         week.text = "Week " + weekCounter;
@@ -105,5 +99,4 @@ public class TurnManager : MonoBehaviour
     {
         turnBar.fillAmount = turnLeft;
     }
-
 }

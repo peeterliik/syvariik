@@ -63,20 +63,20 @@ public class ScenarioController : MonoBehaviour
     {
         currentCandidate = candidates[currentIndex];
         currentCandidate.SetReputationGood();
-        UIInstance.refreshCandidate(currentCandidate);
+        UIInstance.refreshPressOutcome(currentCandidate, 1);
     }
 
     public void SetReputationBadButton()
     {
         currentCandidate = candidates[currentIndex];
         currentCandidate.SetReputationBad();
-        UIInstance.refreshCandidate(currentCandidate);
+        UIInstance.refreshPressOutcome(currentCandidate, 2);
     }
 
     public void SetReputationTrueButton()
     {
         currentCandidate = candidates[currentIndex];
         currentCandidate.SetReputationTrue();
-        UIInstance.refreshCandidate(currentCandidate);
+        UIInstance.refreshPressOutcome(currentCandidate, 3);
     }
 }

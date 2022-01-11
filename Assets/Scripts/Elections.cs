@@ -8,12 +8,19 @@ public class Elections : MonoBehaviour
 {
     public TextMeshProUGUI introText;
     public TextMeshProUGUI electionWinner;
+
+    public TextMeshProUGUI finalScore;
+    public TextMeshProUGUI description;
+
     public Button triggerElections;
     
     public string winnerName;
     public string loserName;
 
-    public int stage = 1;
+    public int score;
+
+    public int stage;
+
 
     public AudioSource electionSound;
 
@@ -30,7 +37,7 @@ public class Elections : MonoBehaviour
         List<Candidate> candidates = ScenarioController.Instance.GetCandidates();
         int maxRep = 0;
         int minRep = 10;
-        string stageName = "parliament";
+        stage = 1;
 
         switch (stage)
         {
@@ -93,11 +100,17 @@ public class Elections : MonoBehaviour
     public void PresentWinner()
     {
         GetWinner();
-        introText.text = "And the winner is: ";
+        introText.text = "And the results are: ";
         electionWinner.text = winnerName;
         electionWinner.gameObject.SetActive(true);
         triggerElections.gameObject.SetActive(false);
         stage += 1;
 
     }
+
+    public void GameEnd()
+    {
+
+    }
+
 }

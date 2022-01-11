@@ -23,6 +23,7 @@ public class TurnManager : MonoBehaviour
     public int weekCounter;
     public TextMeshProUGUI week;
 
+
     private float _turnLeft = 1f;
     public float turnLeft
     {

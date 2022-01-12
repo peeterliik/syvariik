@@ -8,11 +8,9 @@ using TMPro;
 
 public class UIPresenter : MonoBehaviour
 {
-    public static UIPresenter instance{get; private set;}
+    public static UIPresenter Instance{get; private set;}
 
     public StoryPool storyPool;
-
-    //CandidateData currentCandidate;
     // Main panel fields
     public TextMeshProUGUI CandidateName;
     public Image CandidadeImage;
@@ -21,15 +19,21 @@ public class UIPresenter : MonoBehaviour
     // Press panel fields
     public TextMeshProUGUI pressCandidateName;
     public TextMeshProUGUI pressReputation;
+    // Election panel fields
+    public TextMeshProUGUI introText;
+    public TextMeshProUGUI electionResults;
+    public TextMeshProUGUI eliminatedCandidate;
+    // Stage counter
+    public TextMeshProUGUI stageCounter;
 
     private void Awake()
     {
         storyPool = GetComponent<StoryPool>();
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
-        else if (instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
@@ -90,4 +94,29 @@ public class UIPresenter : MonoBehaviour
         }
     }
 
+    public void refreshElectionIntro()
+    {
+        introText.text = "Time to elect the president!";
+    }
+
+    public void refreshElectionOutcome(List<Candidate> candidates, int sumRep)
+    {
+        introText.text = "And the results are: ";
+        electionResults.gameObject.SetActive(true);
+        eliminatedCandidate.gameObject.SetActive(true);
+        double getPercentage(int rep)
+        {
+            Debug.Log((float)rep / (float)sumRep);
+            return System.Math.Round((float)rep / (float)sumRep * 100f, 2);
+        }
+        electionResults.text = candidates[0].candidateName + " with " + getPercentage(candidates[0].parliament) + "% of the votes\n" +
+            candidates[1].candidateName + " with " + getPercentage(candidates[1].parliament) + "% of the votes\n" +
+            candidates[2].candidateName + " with " + getPercentage(candidates[2].parliament) + "% of the votes\n";
+        eliminatedCandidate.text = candidates[candidates.Count - 1].candidateName + " got the least votes and was eliminated.";
+    }
+
+    public void refreshStageNumber()
+    {
+        stageCounter.text = "Stage " + TurnManager.Instance.activeStage;
+    }
 }

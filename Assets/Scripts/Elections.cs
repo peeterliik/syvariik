@@ -3,114 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class Elections : MonoBehaviour
 {
-    public TextMeshProUGUI introText;
-    public TextMeshProUGUI electionWinner;
-
-    public TextMeshProUGUI finalScore;
-    public TextMeshProUGUI description;
+    List<Candidate> candidates;
 
     public Button triggerElections;
-    
-    public string winnerName;
-    public string loserName;
-
-    public int score;
-
-    public int stage;
-
 
     public AudioSource electionSound;
 
+
     void Start()
     {
-        introText.text = "Time to elect the president!";
-        electionWinner.gameObject.SetActive(false);
+        UIPresenter.Instance.refreshElectionIntro();
+        //electionWinner.gameObject.SetActive(false);
         electionSound = GetComponent<AudioSource>();
+
     }
 
-    public void GetWinner()
+    public void checkForWinner()
     {
         //TO-DO calculate the winning candidate
-        List<Candidate> candidates = ScenarioController.Instance.GetCandidates();
+        candidates = ScenarioController.Instance.GetCandidates();
+        candidates.OrderBy(o => o.parliament);
+
         int maxRep = 0;
         int minRep = 10;
-        stage = 1;
-
-        switch (stage)
+        int sumRep = 0;
+        foreach (Candidate candidate in candidates)
         {
-            case 1:
-                foreach (Candidate candidate in candidates)
-                {
-                    int value = candidate.parliament;
-                    if (value > maxRep)
-                    {
-                        maxRep = value;
-                        winnerName = candidate.candidateName;
-                    }
-                    if (value < minRep)
-                    {
-                        minRep = value;
-                        loserName = candidate.candidateName;
-                    }
-
-                }
-                break;
-            case 2:
-                foreach (Candidate candidate in candidates)
-                {
-                    int value = candidate.electoral;
-                    if (value > maxRep)
-                    {
-                        maxRep = value;
-                        winnerName = candidate.candidateName;
-                    }
-                    if (value < minRep)
-                    {
-                        minRep = value;
-                        loserName = candidate.candidateName;
-                    }
-
-                }
-                break;
-            case 3:
-                foreach (Candidate candidate in candidates)
-                {
-                    int value = candidate.people;
-                    if (value > maxRep)
-                    {
-                        maxRep = value;
-                        winnerName = candidate.candidateName;
-                    }
-                    if (value < minRep)
-                    {
-                        minRep = value;
-                        loserName = candidate.candidateName;
-                    }
-
-                }
-                break;
-        };
+            sumRep += candidate.parliament;
+        }
 
         electionSound.Play();
     }
 
     public void PresentWinner()
     {
-        GetWinner();
-        introText.text = "And the results are: ";
-        electionWinner.text = winnerName;
-        electionWinner.gameObject.SetActive(true);
+        candidates = ScenarioController.Instance.GetCandidates();
+        candidates = candidates.OrderBy(o => o.parliament).ToList();
+        candidates.Reverse();
+        int sumRep = 0;
+        foreach (Candidate candidate in candidates)
+        {
+            Debug.Log(candidate.parliament);
+            sumRep += candidate.parliament;
+        }
+        UIPresenter.Instance.refreshElectionOutcome(candidates, sumRep);
+        candidates.RemoveAt(candidates.Count - 1); // Eliminate candidate with least score
         triggerElections.gameObject.SetActive(false);
-        stage += 1;
-
+        electionSound.Play();
     }
-
-    public void GameEnd()
-    {
-
-    }
-
 }

@@ -88,6 +88,7 @@ public class TurnManager : MonoBehaviour
         electionsPanel.SetActive(false);
         turnPanel.SetActive(true);
         activeStage += 1;
+        UIPresenter.Instance.refreshStageNumber();
     }
 
     public void QuitGame()

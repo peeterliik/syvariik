@@ -9,4 +9,8 @@ public static class Events
         // Event to invoke everytime a turn passes.
         public static event Action OnTurnPass;
         public static void PassTurn() => OnTurnPass.Invoke();
+
+        // Event to invoke everytime a stage passes.
+        public static event Action OnStagePass;
+        public static void PassStage() => OnStagePass.Invoke();
 }

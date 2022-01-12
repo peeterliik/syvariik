@@ -29,7 +29,7 @@ public class ScenarioController : MonoBehaviour
 
     private void Start()
     {
-        UIInstance = UIPresenter.instance;
+        UIInstance = UIPresenter.Instance;
         foreach (CandidateData c in startingCandidates.candidates)
         {
             GameObject temp = new GameObject();

@@ -19,7 +19,7 @@ MonoBehaviour:
   familyRolemodel: 9
   confidence: 2
   leftRight: 5
-  consLib: 5
+  consLib: 9
   parliament: 5
   electoral: 8
   people: 6

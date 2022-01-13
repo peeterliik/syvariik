@@ -9,34 +9,13 @@ public class Elections : MonoBehaviour
 {
     List<Candidate> candidates;
 
-    public Button triggerElections;
-
     public AudioSource electionSound;
 
-
-    void Start()
+    private void OnEnable()
     {
         UIPresenter.Instance.refreshElectionIntro();
         //electionWinner.gameObject.SetActive(false);
         electionSound = GetComponent<AudioSource>();
-
-    }
-
-    public void checkForWinner()
-    {
-        //TO-DO calculate the winning candidate
-        candidates = ScenarioController.Instance.GetCandidates();
-        candidates.OrderBy(o => o.parliament);
-
-        int maxRep = 0;
-        int minRep = 10;
-        int sumRep = 0;
-        foreach (Candidate candidate in candidates)
-        {
-            sumRep += candidate.parliament;
-        }
-
-        electionSound.Play();
     }
 
     public void PresentWinner()
@@ -44,15 +23,28 @@ public class Elections : MonoBehaviour
         candidates = ScenarioController.Instance.GetCandidates();
         candidates = candidates.OrderBy(o => o.parliament).ToList();
         candidates.Reverse();
+        ScenarioController.Instance.SetCandidates(candidates);
         int sumRep = 0;
         foreach (Candidate candidate in candidates)
         {
-            Debug.Log(candidate.parliament);
             sumRep += candidate.parliament;
         }
-        UIPresenter.Instance.refreshElectionOutcome(candidates, sumRep);
-        candidates.RemoveAt(candidates.Count - 1); // Eliminate candidate with least score
-        triggerElections.gameObject.SetActive(false);
+        Debug.Log(candidates[0].parliament / (float)sumRep);
+        if (candidates[0].parliament/(float)sumRep>=0.51) // Election won, game ends
+        {
+            UIPresenter.Instance.refreshElectionWinOutcome(candidates[0], sumRep);
+            UIPresenter.Instance.triggerElectionsButton.gameObject.SetActive(false);
+        }
+        else if (TurnManager.Instance.activeStage==3) {
+            UIPresenter.Instance.refreshElectionLoseOutcome();
+            UIPresenter.Instance.triggerElectionsButton.gameObject.SetActive(false);
+        }
+        else // Election continues
+        {
+            UIPresenter.Instance.refreshElectionContinueOutcome(candidates, sumRep);
+            candidates.Remove(candidates[candidates.Count - 1]); // Eliminate candidate with least score
+            UIPresenter.Instance.triggerElectionsButton.gameObject.SetActive(false);
+        }
         electionSound.Play();
     }
 }

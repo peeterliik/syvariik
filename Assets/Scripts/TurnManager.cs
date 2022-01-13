@@ -9,7 +9,6 @@ public class TurnManager : MonoBehaviour
 {
     public static TurnManager Instance;
 
-    public AudioSource endTurn;
     public GameObject electionsPanel;
     public GameObject turnPanel;
 
@@ -42,7 +41,6 @@ public class TurnManager : MonoBehaviour
     {
         Instance = this;
         turnCounter = 0;
-        endTurn = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -65,7 +63,7 @@ public class TurnManager : MonoBehaviour
 
     public void EndTurn()
     {
-        endTurn.Play();
+        SoundManager.instance.playSound(SoundManager.instance.click, 1);
         turnLeft = 1f;
         SetTurnBar();
         turnCounter += 1;
@@ -79,7 +77,6 @@ public class TurnManager : MonoBehaviour
         {
             electionsPanel.SetActive(true);
             turnPanel.SetActive(false);
-            
         }
     }
 
@@ -88,7 +85,10 @@ public class TurnManager : MonoBehaviour
         electionsPanel.SetActive(false);
         turnPanel.SetActive(true);
         activeStage += 1;
+        weekCounter = 0;
         UIPresenter.Instance.refreshStageNumber();
+        UIPresenter.Instance.refreshElectionIntro();
+        UIPresenter.Instance.triggerElectionsButton.gameObject.SetActive(true);
     }
 
     public void QuitGame()

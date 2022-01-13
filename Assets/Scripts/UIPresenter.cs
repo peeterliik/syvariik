@@ -23,6 +23,8 @@ public class UIPresenter : MonoBehaviour
     public TextMeshProUGUI introText;
     public TextMeshProUGUI electionResults;
     public TextMeshProUGUI eliminatedCandidate;
+    public Button triggerElectionsButton;
+    public Button backToMenuButton;
     // Stage counter
     public TextMeshProUGUI stageCounter;
 
@@ -97,15 +99,17 @@ public class UIPresenter : MonoBehaviour
     public void refreshElectionIntro()
     {
         introText.text = "Time to elect the president!";
+        electionResults.gameObject.SetActive(false);
+        eliminatedCandidate.gameObject.SetActive(false);
     }
 
-    public void refreshElectionOutcome(List<Candidate> candidates, int sumRep)
+    public void refreshElectionContinueOutcome(List<Candidate> candidates, int sumRep)
     {
-        introText.text = "And the results are: ";
+        introText.text = "No president elected!\nThe results are as follows: ";
         electionResults.gameObject.SetActive(true);
         eliminatedCandidate.gameObject.SetActive(true);
         double getPercentage(int rep)
-        {
+        {   
             Debug.Log((float)rep / (float)sumRep);
             return System.Math.Round((float)rep / (float)sumRep * 100f, 2);
         }
@@ -113,6 +117,26 @@ public class UIPresenter : MonoBehaviour
             candidates[1].candidateName + " with " + getPercentage(candidates[1].parliament) + "% of the votes\n" +
             candidates[2].candidateName + " with " + getPercentage(candidates[2].parliament) + "% of the votes\n";
         eliminatedCandidate.text = candidates[candidates.Count - 1].candidateName + " got the least votes and was eliminated.";
+    }
+
+    public void refreshElectionWinOutcome(Candidate winner, int sumRep)
+    {
+        backToMenuButton.gameObject.SetActive(true);
+        electionResults.gameObject.SetActive(true);
+        double getPercentage(int rep)
+        {
+            Debug.Log((float)rep / (float)sumRep);
+            return System.Math.Round((float)rep / (float)sumRep * 100f, 2);
+        }
+        electionResults.text = winner.candidateName + " wins the election with " + getPercentage(winner.parliament) + "% of the votes!";
+    }
+
+    public void refreshElectionLoseOutcome()
+    {
+        backToMenuButton.gameObject.SetActive(true);
+        electionResults.gameObject.SetActive(true);
+        introText.text = "No president elected!";
+        electionResults.text = "You have failed. The people of Hekrestan have lost trust in the mighty powers of Syvariik...";
     }
 
     public void refreshStageNumber()

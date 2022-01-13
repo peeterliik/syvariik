@@ -106,15 +106,15 @@ public class StoryPool : MonoBehaviour
     {
         if (conlib >= 1 & conlib <= 3)
         {
-            return "Doesn’t like new stuff because he doesn’t know how to deal with it. Only likes white people.";
+            return "Doesn’t like new stuff because he doesn’t know how to deal with it.";
         }
         else if (conlib >= 4 & conlib <= 7)
         {
-            return "Has made some accidental racial insults but then again has a partner who is black. ";
+            return "Appriciates traditions but is also open to semiliberal views.";
         }
         else if (conlib >= 8)
         {
-            return "Loves gays and all other LGBT+ community members. Would let you merry anyone!";
+            return "Is a known advocate of different minority supporting politics. Would like to forget about depressive past and reform everything!";
         }
         return "";
     }

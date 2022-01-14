@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Ildur
   m_EditorClassIdentifier: 
   candidateName: Ildur Moos
+  score: 2
   image: {fileID: 8558633213039616950, guid: ee8d21d9b35ac3d42a6fa9f4d92e7f1f, type: 3}
   pressCharisma: 10
   lobbySkill: 2

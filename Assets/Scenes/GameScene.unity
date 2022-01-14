@@ -6316,7 +6316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &878464148
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8912,6 +8912,7 @@ MonoBehaviour:
   electionResults: {fileID: 1128821368}
   eliminatedCandidate: {fileID: 216507752}
   triggerElectionsButton: {fileID: 120288777}
+  nextButton: {fileID: 878464149}
   backToMenuButton: {fileID: 542540023}
   stageCounter: {fileID: 1845707062}
 --- !u!114 &1161065090

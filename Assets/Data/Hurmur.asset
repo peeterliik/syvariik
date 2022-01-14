@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Hurmur
   m_EditorClassIdentifier: 
   candidateName: Hurmur Rukkis
+  score: 4
   image: {fileID: -7737748710114358818, guid: ee8d21d9b35ac3d42a6fa9f4d92e7f1f, type: 3}
   pressCharisma: 4
   lobbySkill: 5

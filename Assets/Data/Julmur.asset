@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Julmur
   m_EditorClassIdentifier: 
   candidateName: Juula Sadist-Julmur
+  score: 5
   image: {fileID: 2434629766918126224, guid: ee8d21d9b35ac3d42a6fa9f4d92e7f1f, type: 3}
   pressCharisma: 1
   lobbySkill: 1

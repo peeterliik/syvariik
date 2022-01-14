@@ -9,6 +9,7 @@ public class CandidateData : ScriptableObject
     public static CandidateData Instance;
     
     public string candidateName;
+    public int score;
     public Sprite image;
 
     //Stats (out of 10)
@@ -37,7 +38,7 @@ public class CandidateData : ScriptableObject
 
     int modifier;
 
-
+    
 
     private void Awake()
     {

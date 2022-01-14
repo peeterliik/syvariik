@@ -6,6 +6,7 @@ public class Candidate : MonoBehaviour
 {
     //CandidateData tempData;
     public string candidateName;
+    public int score;
     public Sprite image;
 
 
@@ -41,6 +42,7 @@ public class Candidate : MonoBehaviour
     {
         //tempData = data;
         candidateName = data.candidateName;
+        score = data.score;
         image = data.image;
         pressCharisma = data.pressCharisma;
         lobbySkill = data.lobbySkill;

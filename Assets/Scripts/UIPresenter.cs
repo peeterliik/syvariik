@@ -24,6 +24,7 @@ public class UIPresenter : MonoBehaviour
     public TextMeshProUGUI electionResults;
     public TextMeshProUGUI eliminatedCandidate;
     public Button triggerElectionsButton;
+    public Button nextButton;
     public Button backToMenuButton;
     // Stage counter
     public TextMeshProUGUI stageCounter;
@@ -108,6 +109,7 @@ public class UIPresenter : MonoBehaviour
         introText.text = "No president elected!\nThe results are as follows: ";
         electionResults.gameObject.SetActive(true);
         eliminatedCandidate.gameObject.SetActive(true);
+        nextButton.gameObject.SetActive(true);
         double getPercentage(int rep)
         {   
             Debug.Log((float)rep / (float)sumRep);
@@ -116,7 +118,8 @@ public class UIPresenter : MonoBehaviour
         electionResults.text = candidates[0].candidateName + " with " + getPercentage(candidates[0].parliament) + "% of the votes\n" +
             candidates[1].candidateName + " with " + getPercentage(candidates[1].parliament) + "% of the votes\n" +
             candidates[2].candidateName + " with " + getPercentage(candidates[2].parliament) + "% of the votes\n";
-        eliminatedCandidate.text = candidates[candidates.Count - 1].candidateName + " got the least votes and was eliminated.";
+        eliminatedCandidate.text = candidates[candidates.Count - 1].candidateName + " got the least votes and was eliminated.\n" +
+            "You have 3 more weeks to make a difference...";
     }
 
     public void refreshElectionWinOutcome(Candidate winner, int sumRep)
@@ -128,7 +131,8 @@ public class UIPresenter : MonoBehaviour
             Debug.Log((float)rep / (float)sumRep);
             return System.Math.Round((float)rep / (float)sumRep * 100f, 2);
         }
-        electionResults.text = winner.candidateName + " wins the election with " + getPercentage(winner.parliament) + "% of the votes!";
+        electionResults.text = winner.candidateName + " wins the election with " + getPercentage(winner.parliament) + "% of the votes!\n\n" +
+            "Candidate suitability: " + winner.score + "/10";
     }
 
     public void refreshElectionLoseOutcome()

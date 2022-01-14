@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Kuldur
   m_EditorClassIdentifier: 
   candidateName: "Kuldar T\xE4pnek\xE4si-Kuldur"
+  score: 6
   image: {fileID: 699703873648253923, guid: ee8d21d9b35ac3d42a6fa9f4d92e7f1f, type: 3}
   pressCharisma: 4
   lobbySkill: 3
